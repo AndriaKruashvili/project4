@@ -1,0 +1,696 @@
+:root {
+    --white: rgb(254,254,252);
+    --red: rgb(197,58,50);
+    --blue: rgb(43,40,102);
+}
+
+
+
+/* UTILITIES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--blue);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
+  }
+
+
+
+
+  /* NAVBAR STYLING STARTS */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--red);
+    color: var(--white);
+    position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 10000; /* Adjust the z-index as needed */
+  }
+  
+  .nav-links a {
+    color: var(--white);
+  }
+  
+  /* LOGO */
+  .logo {
+    font-size: 32px;
+  }
+  
+  /* NAVBAR MENU */
+  .menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+  }
+  
+  .menu li:hover {
+    background-color: var(--blue);
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+  
+  .menu li {
+    padding: 5px 14px;
+  }
+  
+  /* DROPDOWN MENU */
+  .services {
+    position: relative; 
+  }
+  
+  .dropdown {
+    background-color: var(--red);
+    padding: 1em 0;
+    position: absolute; /*WITH RESPECT TO PARENT*/
+    display: none;
+    border-radius: 8px;
+    top: 32px;
+  }
+  
+  .dropdown li + li {
+    margin-top: 10px;
+  }
+  
+  .dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+  }
+  
+  .dropdown li:hover {
+    background-color: var(--blue);
+    transition: .5s ease;
+  }
+  
+  .services:hover .dropdown {
+    display: block;
+  }
+
+
+
+
+
+
+  /* CHECKBOX HACK */
+
+input[type=checkbox] {
+    display: none;
+  } 
+  
+  /* HAMBURGER MENU */
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+  }
+  
+  /* APPLYING MEDIA QUERIES */
+  @media (max-width: 768px) {
+   .menu {
+      display:none;
+      position: absolute;
+      background-color: var(--red);
+      right: 0;
+      left: 0;
+      text-align: center;
+      padding: 16px 0;
+    }
+  
+    .menu li:hover {
+      display: inline-block;
+      background-color: var(--blue);
+      transition: 0.5s ease;
+    }
+  
+    .menu li + li {
+      margin-top: 12px;
+    }
+  
+    input[type=checkbox]:checked ~ .menu {
+      display: block;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .dropdown {
+      left: 50%;
+      top:-16px;
+      transform: translateX(35%);
+    }
+  
+    .dropdown li:hover {
+      background-color: var(--blue);
+    }
+  }
+
+
+
+
+
+/* welcome box hereee */
+
+
+.welcome_box {
+    width: 500px;
+    height: 500px;
+    background-color: var(--red);
+    margin: auto;
+    border-radius: 20px;
+
+    position: relative; /* Add this line */
+    z-index: 1; /* Add this line */
+}
+
+
+.welcome_box_text_mogesalmebit {
+    text-align: center;
+    color: var(--white);
+    font-size: 30px;
+    margin-top: 70px;
+    letter-spacing: 1px;
+    
+}
+
+.welcome_box_big_text_mogesalmebit {
+    text-align: center;
+    color: var(--white);
+    font-size: 16px;
+    margin-top: 30px;
+    line-height: 25px;
+}
+
+.welcome_box_text_gaecanit {
+    text-align: center;
+    color: var(--white);
+    font-size: 30px;
+    margin-top: 70px;
+    letter-spacing: 1px;
+}
+
+.welcome_box_big_text_gaecanit {
+    text-align: center;
+    color: var(--white);
+    font-size: 16px;
+    margin-top: 30px;
+    line-height: 25px;
+}
+
+
+
+    /* button here */
+
+.glow-on-hover {
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: var(--white);
+    background: var(--blue);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #fefefc, #c53a32, #2b2866, #fefefc, #c53a32, #2b2866, #fefefc, #c53a32, #2b2866);
+    position: absolute;
+    top: -4px;
+    left:-4px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 20px;
+}
+
+.glow-on-hover:active {
+    color: var(--blue);
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--blue);
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+} 
+
+
+
+/* box responsive here */
+
+
+@media (max-width:644px) {
+    .welcome_box {
+        width: 400px;
+        height: 400px;
+    }
+
+
+
+    .welcome_box_text_mogesalmebit {
+        margin-top: 40px;
+    }
+
+
+    .welcome_box_big_text_mogesalmebit {
+        margin-top: 20px;
+    }
+
+
+    .welcome_box_text_gaecanit {
+        margin-top: 40px;
+    }
+
+    .welcome_box_big_text_gaecanit {
+        margin-top: 20px;
+    }
+    .glow-on-hover {
+        margin-top: 25px;
+    }
+}
+
+
+
+
+
+
+@media (max-width:513px) {
+    .welcome_box {
+        width: 280px;
+        height: 400px;
+    }
+
+
+
+    .welcome_box_text_mogesalmebit {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+
+    .welcome_box_big_text_mogesalmebit {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+
+
+    .welcome_box_text_gaecanit {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    .welcome_box_big_text_gaecanit {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+    .glow-on-hover {
+        margin-top: 25px;
+    }
+}
+
+
+
+
+
+
+
+/* rules div hereeee */
+
+
+.rules_box {
+  width: 500px;
+  height: 300px;
+  background-color: red;
+
+  position: relative; /* Add this line */
+  z-index: 2; /* Add this line */
+  padding: 20px;
+  
+  
+}
+
+.rules_box_text_rules_li {
+  font-weight: 500;
+  color: var(--white);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.rules_box_div_submit {
+  width: 150px;
+  height: 50px;
+  background-color: var(--blue);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+
+
+
+/* checkbox animacion hereeeee */
+
+.chechbox_div {
+  width: 105px;
+  height: 37px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.chackboxx{ height: 0; width: 0; }
+
+.chackboxx + label{
+  position: relative;
+  display: flex;
+  margin: .6em 0;
+  align-items: center;
+  color: rgba(61, 54, 54, 0.87);
+  transition: color 250ms cubic-bezier(.4,.0,.23,1);
+  font-size: 20px;
+  font-weight: 500;
+  
+}
+.chackboxx + label > ins{
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 2em;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  text-decoration: none;
+  transition: height 300ms cubic-bezier(.4,.0,.23,1);
+  
+}
+.chackboxx + label > ins > i{
+  position: absolute;
+  bottom: 0;
+  font-style: normal;
+  color: var(--blue);
+  font-weight: 500;
+  
+  
+}
+.chackboxx + label > span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1em;
+  width: 1em;
+  height: 1em;
+  background: transparent;
+  border: 2px solid #9E9E9E;
+  border-radius: 2px;
+  cursor: pointer;  
+  transition: all 250ms cubic-bezier(.4,.0,.23,1);
+  
+}
+
+
+.chackboxx + label:hover > span, .chackboxx:focus + label > span{
+  background: rgba(255,255,255,.1);
+}
+.chackboxx:checked + label > ins{ height: 100%; }
+
+.chackboxx:checked + label > span{
+  border: .5em solid var(--blue);
+  animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+}
+.chackboxx:checked + label > span:before{
+  content: "";
+  position: absolute;
+  top: .6em;
+  left: .2em;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transform: rotate(45deg);
+  transform-origin: 0% 100%;
+  animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+}
+
+@keyframes shrink-bounce{
+  0%{
+    transform: scale(1);
+  }
+  33%{    
+    transform: scale(.85);
+  }
+  100%{
+    transform: scale(1);    
+  }
+}
+@keyframes checkbox-check{
+  0%{
+    width: 0;
+    height: 0;
+    border-color: var(--red);
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  33%{
+    width: .2em;
+    height: 0;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  100%{    
+    width: .2em;
+    height: .5em;    
+    border-color: var(--red);
+    transform: translate3d(0,-.5em,0) rotate(45deg);
+  }
+}
+
+/* checkbox animacion hereeeee⬇️ */
+
+
+
+/* autotyper hereee */
+
+.wrapper {
+  /*This part is important for centering*/
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.typing-demo {
+  width: 14ch;
+  animation: typing 1s steps(20), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 5px solid;
+  border-color: var(--blue);
+  color: var(--white);
+  font-size: 2rem;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+
+
+.welcome_box {
+  width: 50%;
+  height: 60%;
+  background-color: var(--red);
+  border-radius: 20px;
+  position: absolute;
+  z-index: 100; /* Place welcome box below rules box */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  min-height: 570px;
+}
+
+.rules_box {
+  width: 50%;
+  height: 60%;
+  background-color: var(--red);
+  position: absolute;
+  z-index: 200; /* Place rules box on top of welcome box */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  /* Add other styling for rules box as needed */
+  border-radius: 20px;
+}
+
+
+
+
+
+/* rules responsive hereee */
+
+
+
+@media(max-width:1028px) {
+
+
+  .rules_box  {
+    width: 80%;
+  }
+  .welcome_box {
+    width: 80%;
+  }
+
+}
+
+@media(max-width:559px) {
+
+  .typing-demo {
+    font-size: 1.5rem;
+    border-radius: 2px solid;
+  }
+
+  .rules_box_text_rules_li {
+    font-size: 17px;
+    
+  }
+ 
+  
+
+}
+
+@media(max-width:437px) {
+
+  .rules_box {
+    width: 90%;
+  }
+  
+  .welcome_box {
+    width: 90%;
+  }
+  
+
+}
+
+@media(max-width:386px) {
+
+  .typing-demo {
+    font-size: 1.3rem;
+    border-radius: 1px solid;
+  }
+ 
+  .rules_box_text_rules_li {
+    font-size: 15px;
+    
+  }
+
+}
+
+
+@media(max-width:313px) {
+  .rules_box {
+    width: 97%;
+  }
+  .welcome_box {
+    width: 97%;
+  }
+
+}
+
+
+
+
+@media(max-height:830px) {
+  .welcome_box {
+    height: 570px;
+    margin-top: 50px;
+  }
+  .rules_box {
+    height: 570px;
+    margin-top: 50px;
+  }
+}
+
+
+
+@media(max-height:695px) {
+  .welcome_box {
+    height: 570px;
+    margin-top: 100px;
+  }
+  .rules_box {
+    height: 570px;
+    margin-top: 100px;
+  }
+}
+
+@media(max-height:540px) {
+  .welcome_box {
+    height: 570px;
+    margin-top: 150px;
+  }
+  .rules_box {
+    height: 570px;
+    margin-top: 150px;
+  }
+}
+
+
+

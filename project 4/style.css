@@ -1,0 +1,224 @@
+
+:root {
+    --white: rgb(254,254,252);
+    --red: rgb(197,58,50);
+    --blue: rgb(43,40,102);
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--blue);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.container_parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.container {
+    text-align: center;
+    background-color: var(--red);
+    padding: 20px;
+    border-radius: 15px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 400px;
+}
+
+
+.matrica {
+    color: #0d7c32;
+}
+
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="password"] {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid var(--white);
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    height: 46px;
+}
+
+button:hover {
+    background-color: var(--blue);
+}
+
+.hidden {
+    display: none;
+}
+
+    /* box responsive */
+
+@media (max-width: 750px) {
+    .container {
+        
+        padding: 10px;
+        
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="password"] {
+        width: 70%;
+        border-radius: 5px;
+    }
+    button {
+        border-radius: 5px;
+    }
+}
+
+
+.sheiyvane_text {
+    color: var(--white);
+    font-weight: 500;
+}
+
+
+
+
+
+
+.sheiyvane_text {
+    color: var(--white);
+    font-weight: 500;
+}
+
+
+
+
+
+
+.wrapper {
+    
+    /*This part is important for centering*/
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  .typing-demo {
+    width: 28ch;
+    animation: typing 1.5s steps(32), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 5px solid;
+    border-color: var(--red);
+    color: var(--white);
+    font-size: 2em;
+    
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+
+
+   
+
+
+  @media (max-width: 525px) {
+    .container {
+        
+        padding: 10px;
+        height: 300px;
+        width: 400px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="password"] {
+        width: 70%;
+    }
+
+    .typing-demo {
+        font-size: 1.5rem;
+    }
+
+
+    
+
+}
+
+
+
+
+
+@media (max-width: 430px) {
+    .container {
+        
+        padding: 10px;
+        height: 200px;
+        width: 280px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="password"] {
+        width: 70%;
+    }
+
+    .typing-demo {
+        font-size: 1.2rem;
+    }
+
+
+    .sheiyvane_text {
+        font-size: 18px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
